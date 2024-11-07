@@ -8,9 +8,16 @@ const button = document.getElementById("on-btn");
 console.log(button); // -> verifico il bottone
 
 button.addEventListener("click", function() {
-     if(lamp1.classList.contains("off")) {
-        lamp1.src = "./img/yellow_lamp.png";
+    lamp1.src = "./img/yellow_lamp.png";
+    lamp1.alt = "lampadina accesa";
 
-    } 
+    if(lamp1.classList.contains("off")) {
+        lamp1.classList.remove("off")
+        button.innerHTML = "Spegni"
+    } else {
+        lamp1.classList.add("off")
+        button.innerHTML = "Accendi"
+        lamp1.src = "./img/white_lamp.png"
+    }
 }
 );
